@@ -4,7 +4,6 @@
   description: "Esto es una prueba"
   image:
   tags: ["astro", "javascript"]
-  layout: "../layouts/Base.astro"
 ---
 
 # Hola Astro

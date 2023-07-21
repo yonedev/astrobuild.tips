@@ -1,16 +1,23 @@
 ---
 import { getCollection } from 'astro:content'
+import Base from '../../layouts/Base.astro'
 
+/**
+ * Referencia para generar las rutas e indica que la página será procesada en tiempo de compilación
+ * Cada valor retornado es una página.
+ */
 export async function getStaticPaths() {
-	const posts = await getCollection('tips') // Recuper la colección dentro de carpeta /content
+	const posts = await getCollection('tips') // Recuper la colección dentro de carpeta /content/tips
 	return posts.map((post) => ({
-		params: { slug: post.slug }, // Comparo que el slug que recibo coincida con una de la colección
+		params: { slug: post.slug }, // Corresponde con el nombre asignado en el archivo, en este caso [...slug].astro. Puede ser otro valor como author, name...
 		props: post
 	}))
 }
 
-const post = Astro.props // Recupero el post
-const { Content } = await post.render() // Render del post
+const post = Astro.props // Recupero el post desde los props que asigné en tiempo de compilación de la página
+const { Content } = await post.render() // Render del post que devuelve el Markdown
 ---
 
-<Content />
+<Base title="AstroBuild.tips">
+	<Content />
+</Base>

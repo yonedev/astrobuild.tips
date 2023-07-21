@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('tips') // Recuper la colección dentro de carpeta /content
+	return posts.map((post) => ({
+		params: { slug: post.slug }, // Comparo que el slug que recibo coincida con una de la colección
+		props: post
+	}))
+}
+
+const post = Astro.props // Recupero el post
+const { Content } = await post.render() // Render del post
+---
+
+<Content />

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Base from '../../layouts/Base.astro'
+import HeaderTop from '../../components/react/HeaderTop'
 import Header from '../../components/react/Header'
 import Footer from '../../components/vue/Footer.vue'
 import Social from '../../components/svelte/Social.svelte'
@@ -22,10 +23,11 @@ const { Content } = await post.render() // Render del post que devuelve el Markd
 ---
 
 <Base title="AstroBuild.tips">
-  <Header title="AstroTip.build"/>
+	<!-- Componente Astro Islands -->
+	<HeaderTop client:load />
+	<Header title="AstroTip.build" />
 	<Content />
-  <Footer>
-    <Social />
-  </Footer>
-  
+	<Footer>
+		<Social />
+	</Footer>
 </Base>

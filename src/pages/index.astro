@@ -6,9 +6,8 @@ import Hero from '../components/Hero.astro'
 
 const allPosts = await Astro.glob('../content/tips/*.md')
 
-
 console.log(allPosts)
-console.log("hola")
+console.log('hola')
 ---
 
 <Layout title="Welcome to Astro.">
@@ -28,7 +27,7 @@ console.log("hola")
 						image={item?.frontmatter?.image}
 						time={item?.frontmatter?.date}
 						tags={item?.frontmatter?.tags}
-            slug={item?.frontmatter?.url}
+						slug={item?.frontmatter?.url}
 					/>
 				))
 			}

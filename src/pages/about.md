@@ -1,7 +1,7 @@
 ---
 # Propiedades frontmatter
-title: "Hola mundo"
-layout: "../layouts/Base.astro"
+title: 'Hola mundo'
+layout: '../layouts/Base.astro'
 ---
 
 ## Hola mundo

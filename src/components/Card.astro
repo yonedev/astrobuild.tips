@@ -7,6 +7,8 @@ interface Props {
 	slug: string
 }
 
+import { FormatDate } from '../utils/commons'
+
 const { title, image, time, tags, slug } = Astro.props
 ---
 
@@ -15,7 +17,7 @@ const { title, image, time, tags, slug } = Astro.props
 
 	<div class="p-4 sm:p-6">
 		<time datetime="2022-10-10" class="block text-xs text-gray-500">
-			{time}
+			{FormatDate(time)}
 		</time>
 		<a href={`/posts/${slug}`}>
 			<h3 class="text-lg font-medium text-gray-900">

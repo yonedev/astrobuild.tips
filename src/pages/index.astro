@@ -5,6 +5,10 @@ import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
 
 const allPosts = await Astro.glob('../content/tips/*.md')
+
+
+console.log(allPosts)
+console.log("hola")
 ---
 
 <Layout title="Welcome to Astro.">
@@ -18,11 +22,13 @@ const allPosts = await Astro.glob('../content/tips/*.md')
 				allPosts.map((item) => (
 					/*
           Optional Chaining ?. para que no rompa si el diccionario no tiene los datos requeridos
+          // TODO: frontmatter no tiene slug aquí, ver como hacer con el tutorial q tengo
           */ <Card
 						title={item?.frontmatter?.title}
 						image={item?.frontmatter?.image}
 						time={item?.frontmatter?.date}
 						tags={item?.frontmatter?.tags}
+            slug={item?.frontmatter?.url}
 					/>
 				))
 			}

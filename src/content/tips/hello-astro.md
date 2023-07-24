@@ -1,4 +1,5 @@
 ---
+  # Propiedades frontmatter
   title: "Hello Astro"
   date: "2024-07-21"
   description: "Proin porttitor, orci nec nonummy molestie."

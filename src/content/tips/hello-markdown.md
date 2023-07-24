@@ -1,4 +1,5 @@
 ---
+  # Propiedades frontmatter
   title: "Hello Markdown"
   date: "2023-07-21"
   description: "Lorem ipsum dolor sit amet."

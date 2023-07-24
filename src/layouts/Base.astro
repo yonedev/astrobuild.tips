@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string
+}
+
+import BaseHead from '../components/BaseHead.astro'
+
+const { title } = Astro.props
+// TODO: pasar description y sino tener uno default en title y default
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<BaseHead title={title} description="Test page" />
+	<body class="h-screen">
+		<slot />
+	</body>
+</html>

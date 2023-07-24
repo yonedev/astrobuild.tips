@@ -1,53 +1,48 @@
 ---
 interface Props {
-  title: string;
-  image: string;
-  time: string;
-  tags: string;
+	title: string
+	image: string
+	time: string
+	tags: string[]
+	slug: string
 }
 
-const { title, image, time, tags } = Astro.props;
+const { title, image, time, tags, slug } = Astro.props
 ---
 
-<article
-  class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm"
->
-  <img :alt="title" :src="image" class="h-56 w-full object-cover" />
+<article class="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+	<img :alt="title" :src="image" class="h-56 w-full object-cover" />
 
-  <div class="p-4 sm:p-6">
-    <time datetime="2022-10-10" class="block text-xs text-gray-500">
-      {time}
-    </time>
-    <a href="#">
-      <h3 class="text-lg font-medium text-gray-900">
-        {title}
-      </h3>
-    </a>
+	<div class="p-4 sm:p-6">
+		<time datetime="2022-10-10" class="block text-xs text-gray-500">
+			{time}
+		</time>
+		<a href={`/posts/${slug}`}>
+			<h3 class="text-lg font-medium text-gray-900">
+				{title}
+			</h3>
+		</a>
 
-    <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-      dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-      sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-      voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-      Molestias explicabo corporis voluptatem?
-    </p>
+		<p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+			pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
+			mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+			dignissimos. Molestias explicabo corporis voluptatem?
+		</p>
 
-    <a
-      href="#"
-      class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
-    >
-      Find out more
+		<a href="#" class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+			Find out more
 
-      <span aria-hidden="true" class="block transition-all group-hover:ms-0.5">
-        &rarr;
-      </span>
-    </a>
-    <div class="mt-4 flex flex-wrap gap-1">
-      <span
-        class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
-      >
-        {tags}
-      </span>
-    </div>
-  </div>
+			<span aria-hidden="true" class="block transition-all group-hover:ms-0.5"> &rarr;</span>
+		</a>
+		<div class="mt-4 flex flex-wrap gap-1">
+			{
+				tags.map((item) => (
+					<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+						{item}
+					</span>
+				))
+			}
+		</div>
+	</div>
 </article>

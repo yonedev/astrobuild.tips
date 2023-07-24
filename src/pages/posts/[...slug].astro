@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import HeaderTop from '../../components/react/HeaderTop'
+import Header from '../../components/react/Header'
+import Footer from '../../components/vue/Footer.vue'
+import Social from '../../components/svelte/Social.svelte'
+
+/**
+ * Referencia para generar las rutas e indica que la página será procesada en tiempo de compilación
+ * Cada valor retornado es una página.
+ */
+export async function getStaticPaths() {
+	const posts = await getCollection('tips') // Recuper la colección dentro de carpeta /content/tips
+	return posts.map((post) => ({
+		params: { slug: post.slug }, // Corresponde con el nombre asignado en el archivo, en este caso [...slug].astro. Puede ser otro valor como author, name...
+		props: post
+	}))
+}
+
+const post = Astro.props // Recupero el post desde los props que asigné en tiempo de compilación de la página
+const { Content } = await post.render() // Render del post que devuelve el Markdown
+---
+
+<Base title="AstroBuild.tips">
+	<!-- Componente Astro Islands -->
+	<HeaderTop client:load />
+	<Header title="AstroTip.build" />
+	<Content />
+	<Footer>
+		<Social />
+	</Footer>
+</Base>

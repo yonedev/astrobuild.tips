@@ -14,5 +14,8 @@ const { title } = Astro.props
 	<BaseHead title={title} description="Test page" />
 	<body class="h-screen">
 		<slot />
+    <style is:global>
+      /* Estilos globales si quisiera que fueran accesibles desde cualquier componente */
+    </style>
 	</body>
 </html>

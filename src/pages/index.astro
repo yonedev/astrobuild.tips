@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Base from '../layouts/Base.astro'
 import Card from '../components/Card.astro'
 import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
@@ -10,7 +10,7 @@ console.log(allPosts)
 console.log('hola')
 ---
 
-<Layout title="Welcome to Astro.">
+<Base title="Welcome to Astro.">
 	<main>
 		<Header title="AstroBuild.tips" />
 
@@ -33,7 +33,7 @@ console.log('hola')
 			}
 		</ul>
 	</main>
-</Layout>
+</Base>
 
 <style>
 	main {

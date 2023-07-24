@@ -2,8 +2,8 @@ module.exports = {
 	// ...
 	extends: [
 		// ...
-		'plugin:astro/recommended'
-		// 'plugin:astro/jsx-a11y-recommended' // Accesibilidad
+		'plugin:astro/recommended',
+		'plugin:astro/jsx-a11y-recommended' // Reglas de accesibilidad
 	],
 	// ...
 	overrides: [

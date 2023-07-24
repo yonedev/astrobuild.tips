@@ -4,18 +4,73 @@ interface Props {
 }
 
 import BaseHead from '../components/BaseHead.astro'
+import HeaderTop from '../components/react/HeaderTop'
+// import ThemeToogle from '../../components/vue/ThemeToggle.vue'
+import ThemeToogle from '../components/preact/ThemeToggle'
+import Footer from '../components/vue/Footer.vue'
+import Social from '../components/svelte/Social.svelte'
+// TODO: @ para llegar a los componentes
+// TODO: sacar de todos lados los
+// TODO: Poner modo Dark
+// TODO: Botón modo dark mejorado
 
 const { title } = Astro.props
 // TODO: pasar description y sino tener uno default en title y default
 ---
 
-<!DOCTYPE html>
+<style is:global>
+	/* Estilos globales si quisiera que fueran accesibles desde cualquier componente */
+	/*
+:root {
+  --accent: 124, 58, 237;
+  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+}
+html {
+  font-family: system-ui, sans-serif;
+  background-color: #f6f6f6;
+}
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+*/
+</style>
+
+<script is:inline>
+const theme = (() => {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    return localStorage.getItem('theme')
+  }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark'
+  }
+  return 'light'
+})()
+
+if (theme === 'light') {
+  document.documentElement.classList.remove('dark')
+} else {
+  document.documentElement.classList.add('dark')
+}
+window.localStorage.setItem('theme', theme)
+</script>
+
 <html lang="es">
 	<BaseHead title={title} description="Test page" />
-	<body class="h-screen">
+	<body class="h-screen bg-white dark:bg-gray-900">
+		<!-- Componente Astro Islands -->
+		<HeaderTop client:load />
 		<slot />
-    <style is:global>
-      /* Estilos globales si quisiera que fueran accesibles desde cualquier componente */
-    </style>
+		<ThemeToogle client:load />
+		<Footer>
+			<Social />
+		</Footer>
 	</body>
 </html>

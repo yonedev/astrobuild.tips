@@ -4,7 +4,7 @@
       href="/"
       rel="noreferrer"
       target="_blank"
-      class="text-gray-700 transition hover:text-gray-700/75"
+      class="text-gray-700 transition hover:text-gray-700/75  dark:text-gray-500"
     >
       <span class="sr-only">Facebook</span>
       <svg
@@ -27,7 +27,7 @@
       href="/"
       rel="noreferrer"
       target="_blank"
-      class="text-gray-700 transition hover:text-gray-700/75"
+      class="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-500"
     >
       <span class="sr-only">Instagram</span>
       <svg
@@ -50,7 +50,7 @@
       href="/"
       rel="noreferrer"
       target="_blank"
-      class="text-gray-700 transition hover:text-gray-700/75"
+      class="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-500"
     >
       <span class="sr-only">Twitter</span>
       <svg
@@ -71,7 +71,7 @@
       href="/"
       rel="noreferrer"
       target="_blank"
-      class="text-gray-700 transition hover:text-gray-700/75"
+      class="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-500"
     >
       <span class="sr-only">GitHub</span>
       <svg
@@ -94,7 +94,7 @@
       href="/"
       rel="noreferrer"
       target="_blank"
-      class="text-gray-700 transition hover:text-gray-700/75"
+      class="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-500"
     >
       <span class="sr-only">Dribbble</span>
       <svg

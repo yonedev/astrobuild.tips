@@ -1,14 +1,12 @@
 ---
-import Base from '../../layouts/Base.astro'
-import Card from '../../components/Card.astro'
-import Header from '../../components/Header.astro'
+import Base from '@layouts/Base.astro'
+import Card from '@components/Card.astro'
 import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('tips')).sort(
 	(a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 )
 // console.log(posts) // TODO: hacer componente para si es build no meter console log
-// TODO: falta cabecera y darle un formato adecuado
 ---
 
 <Base title="Welcome to Astro." description="Test page">

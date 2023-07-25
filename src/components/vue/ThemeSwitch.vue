@@ -1,6 +1,9 @@
 <script lang="ts">
 /**
- * Ejemplo usando Vue del themeSwitch, actualmente lo tengo nativo en Astro
+ * Replica de ThemeSwitch.astro en Vue.js. No está instanciado
+ *
+ * import ThemeSwitchVue from '../components/vue/ThemeSwitch.vue'
+ * <ThemeSwitchVue client:load />
  */
 import { defineComponent } from 'vue'
 

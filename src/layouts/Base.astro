@@ -1,12 +1,12 @@
 ---
 interface Props {
 	title: string
+	description: string
 }
 
 import BaseHead from '../components/BaseHead.astro'
-import HeaderTop from '../components/react/HeaderTop'
-// import ThemeToogle from '../../components/vue/ThemeToggle.vue'
-import ThemeSwitchVue from '../components/vue/ThemeSwitch.vue'
+// import HeaderTop from '../components/react/HeaderTop'
+import Header from '../components/vue/Header.vue'
 import ThemeSwitch from '../components/ThemeSwitch.astro'
 import Footer from '../components/vue/Footer.vue'
 import Social from '../components/svelte/Social.svelte'
@@ -16,70 +16,22 @@ import Social from '../components/svelte/Social.svelte'
 // TODO: Botón modo dark mejorado
 // TODO: Traducir ui y contenido
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 // TODO: pasar description y sino tener uno default en title y default
 ---
 
 <style is:global>
 	/* Estilos globales si quisiera que fueran accesibles desde cualquier componente */
-	/*
-:root {
-  --accent: 124, 58, 237;
-  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-}
-html {
-  font-family: system-ui, sans-serif;
-  background-color: #f6f6f6;
-}
-code {
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
-}
-*/
 </style>
 
-<script is:inline>
-	// TODO: ver si hacer solo q tome inicialmente el del sistema
-/*
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon')
-
-const theme = (() => {
-if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-return localStorage.getItem('theme')
-}
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-return 'dark'
-}
-return 'light'
-})()
-
-if (theme === 'light') {
-document.documentElement.classList.remove('dark')
-themeToggleDarkIcon.classList.toggle('hidden') // TODO: Esto no funciona
-} else {
-document.documentElement.classList.add('dark')
-themeToggleLightIcon.classList.toggle('hidden') // TODO: Esto no funciona
-}
-window.localStorage.setItem('theme', theme)
-*/
-</script>
-
 <html lang="es">
-	<BaseHead title={title} description="Test page" />
+	<BaseHead title={title} description={description} />
 	<body class="h-screen bg-white dark:bg-gray-900">
-		<!-- Componente Astro Islands -->
-		<HeaderTop client:load />
+		<!-- Componente Astro Islands en Vue.js al que paso un componente astro -->
+		<Header client:load>
+			<ThemeSwitch />
+		</Header>
 		<slot />
-		<ThemeSwitchVue client:load />
-		<ThemeSwitch />
 		<Footer>
 			<Social />
 		</Footer>

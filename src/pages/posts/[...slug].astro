@@ -19,7 +19,8 @@ const post = Astro.props // Recupero el post desde los props que asigné en tiem
 const { Content } = await post.render() // Render del post que devuelve el Markdown
 ---
 
-<Base title="AstroBuild.tips">
+<!-- TODO: description desde el contenido -->
+<Base title="AstroBuild.tips" description="Test page">
 	<Header title="AstroTip.build" />
 	<main>
 		<Content />

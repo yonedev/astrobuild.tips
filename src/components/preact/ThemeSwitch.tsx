@@ -1,3 +1,9 @@
+/**
+ * Replica de ThemeSwitch.astro en Preact. No está instanciado
+ *
+ * import ThemeSwitchPreact from '../components/preact/ThemeSwitch'
+ * <ThemeSwitchReact client:load />
+ */
 import { useEffect, useState } from 'preact/hooks'
 import type { FunctionalComponent } from 'preact'
 
@@ -20,22 +26,3 @@ export default function ThemeToggle(): FunctionalComponent {
 
 	return <button onClick={handleClick}>{theme === 'light' ? '🌙' : '🌞'}</button>
 }
-
-/*
-import React from 'react'
-
-interface Props {
-	title: string
-}
-
-const ThemeToggle = ({ title }: Props) => {
-	const handleClick = () => {
-		console.log('hola2')
-		// setTheme(theme === 'light' ? 'dark' : 'light')
-	}
-
-	return <button onClick={handleClick}>🌞</button>
-}
-
-export default ThemeToggle
-*/

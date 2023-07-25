@@ -1,8 +1,8 @@
 ---
 import Base from '@layouts/Base.astro'
 
+// https://docs.astro.build/en/recipes/i18n/
 import { getLangFromUrl, useTranslations } from '@i18n/utils'
-
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
@@ -14,7 +14,7 @@ const t = useTranslations(lang)
 
 			<p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
 
-			<p class="mt-4 text-gray-500">Página no encontrada. {t('hello_world')}</p>
+			<p class="mt-4 text-gray-500">We can't find that page. {t('hello_world')}</p>
 
 			<a
 				href="/"

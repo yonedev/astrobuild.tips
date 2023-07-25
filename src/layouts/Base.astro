@@ -1,18 +1,30 @@
 ---
 interface Props {
 	title: string
+	description: string
+	lang?: string // Valor opcional
 }
 
-import BaseHead from '../components/BaseHead.astro'
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/vue/Header.vue'
+import ThemeSwitch from '@components/ThemeSwitch.astro'
+import Footer from '@components/vue/Footer.vue'
+import Social from '@components/svelte/Social.svelte'
 
-const { title } = Astro.props
-// TODO: pasar description y sino tener uno default en title y default
+import { getLangFromUrl } from '../i18n/utils'
+const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<BaseHead title={title} description="Test page" />
-	<body class="h-screen">
+<html lang={lang}>
+	<BaseHead title={title} description={description} />
+	<body class="h-screen bg-white dark:bg-gray-900">
+		<!-- Componente Astro Islands en Vue.js al que paso un componente astro -->
+		<Header client:load>
+			<ThemeSwitch />
+		</Header>
 		<slot />
+		<Footer>
+			<Social />
+		</Footer>
 	</body>
 </html>

@@ -1,51 +1,35 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Card from '../../components/Card.astro'
-import Header from '../../components/Header.astro'
-import Hero from '../../components/Hero.astro'
+import Base from '@layouts/Base.astro'
+import Card from '@components/Card.astro'
 import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('tips')).sort(
 	(a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 )
-console.log(posts)
+// console.log(posts) // TODO: hacer componente para si es build no meter console log
 ---
 
-<Layout title="Welcome to Astro.">
+<Base title="Welcome to Astro." description="Test page">
 	<main>
-		<Header title="AstroBuild.tips" />
-
-		<Hero />
-
-		<ul role="list" class="link-card-grid">
-			{
-				posts.map((post) => (
-					/*
-          Optional Chaining ?. para que no rompa si el diccionario no tiene los datos requeridos
-          */ <Card
-						title={post?.data?.title}
-						image={post?.data?.image}
-						time={post?.data?.date}
-						tags={post?.data?.tags}
-						slug={post?.slug}
-					/>
-				))
-			}
-		</ul>
+		<div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+			<ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+				{
+					posts.map((post) => (
+						// Optional Chaining ?. para que no rompa si el diccionario no tiene los datos requeridos
+						<li>
+							<Card
+								title={post?.data?.title}
+								image={post?.data?.image}
+								time={post?.data?.date}
+								tags={post?.data?.tags}
+								slug={post?.slug}
+							/>
+						</li>
+					))
+				}
+			</ul>
+		</div>
 	</main>
-</Layout>
+</Base>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+<style></style>

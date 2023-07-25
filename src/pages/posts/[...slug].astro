@@ -1,10 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import Base from '../../layouts/Base.astro'
-import HeaderTop from '../../components/react/HeaderTop'
-import Header from '../../components/react/Header'
-import Footer from '../../components/vue/Footer.vue'
-import Social from '../../components/svelte/Social.svelte'
+import Base from '@layouts/Base.astro'
+import Header from '@components/react/Header'
 
 /**
  * Referencia para generar las rutas e indica que la página será procesada en tiempo de compilación
@@ -22,12 +19,10 @@ const post = Astro.props // Recupero el post desde los props que asigné en tiem
 const { Content } = await post.render() // Render del post que devuelve el Markdown
 ---
 
-<Base title="AstroBuild.tips">
-	<!-- Componente Astro Islands -->
-	<HeaderTop client:load />
+<!-- TODO: description desde el contenido -->
+<Base title="AstroBuild.tips" description="Test page">
 	<Header title="AstroTip.build" />
-	<Content />
-	<Footer>
-		<Social />
-	</Footer>
+	<main>
+		<Content />
+	</main>
 </Base>

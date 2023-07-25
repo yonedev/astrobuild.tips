@@ -1,40 +1,35 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-import Header from '../components/Header.astro'
-import Hero from '../components/Hero.astro'
+import Base from '@layouts/Base.astro'
+import Card from '@components/Card.astro'
+import Header from '@components/Header.astro'
 
 const allPosts = await Astro.glob('../content/tips/*.md')
 
-
 console.log(allPosts)
-console.log("hola")
 ---
 
-<Layout title="Welcome to Astro.">
+<Base title="Welcome to Astro." description="Test page">
 	<main>
-		<Header title="AstroBuild.tips" />
-
-		<Hero />
-
-		<ul role="list" class="link-card-grid">
-			{
-				allPosts.map((item) => (
-					/*
+		<div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+			<ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+				{
+					allPosts.map((item) => (
+						/*
           Optional Chaining ?. para que no rompa si el diccionario no tiene los datos requeridos
           // TODO: frontmatter no tiene slug aquí, ver como hacer con el tutorial q tengo
           */ <Card
-						title={item?.frontmatter?.title}
-						image={item?.frontmatter?.image}
-						time={item?.frontmatter?.date}
-						tags={item?.frontmatter?.tags}
-            slug={item?.frontmatter?.url}
-					/>
-				))
-			}
-		</ul>
+							title={item?.frontmatter?.title}
+							image={item?.frontmatter?.image}
+							time={item?.frontmatter?.date}
+							tags={item?.frontmatter?.tags}
+							slug={item?.frontmatter?.url}
+						/>
+					))
+				}
+			</ul>
+		</div>
 	</main>
-</Layout>
+</Base>
 
 <style>
 	main {

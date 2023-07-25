@@ -32,6 +32,7 @@ Bienvenido/a a la Caja de herramientas para aprender Astro, un framework JavaScr
 ## 👀 Enlaces de interés
 
 - [Documentación](https://docs.astro.build)
+- [Plantillas](https://astro.build/themes/)
 - [Integraciones](https://astro.build/integrations/)
 - [HypeUi. Recursos y componentes TailwindCSS](https://www.hyperui.dev/)
 - [TailwindUI. Recursos y componentes TailwindCSS](https://tailwindui.com/)

@@ -1,3 +1,15 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+	data() {
+		return {
+			currentYear: new Date().getFullYear()
+		}
+	}
+})
+</script>
+
 <template>
 	<footer class="bg-gray-100">
 		<div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -83,14 +95,3 @@
 		</div>
 	</footer>
 </template>
-
-<script>
-export default {
-	components: {},
-	data() {
-		return {
-			currentYear: new Date().getFullYear()
-		}
-	}
-}
-</script>

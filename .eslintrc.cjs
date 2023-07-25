@@ -16,12 +16,12 @@ module.exports = {
 			// It's the setting you need when using TypeScript.
 			parserOptions: {
 				parser: '@typescript-eslint/parser',
-				extraFileExtensions: ['.astro'],
-				sourceType: 'module',
-				ecmaVersion: 'latest'
+				extraFileExtensions: ['.astro']
+				// sourceType: 'module',
+				// ecmaVersion: 'latest'
 			},
 			env: {
-				es6: true
+				// es6: true
 			},
 			rules: {
 				// override/add rules settings here, such as:

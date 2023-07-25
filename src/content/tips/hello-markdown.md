@@ -1,10 +1,11 @@
 ---
-  title: "Hello Markdown"
-  date: "2023-07-21"
-  description: "Lorem ipsum dolor sit amet."
-  image: "https://fastly.picsum.photos/id/1075/800/600.jpg?hmac=kYx8SJzDS2-aeDsguBGms2tWSUWkdtGPgCLNnanSNaM"
-  tags: ["markdown"]
-  layout: "../../layouts/Posts.astro"
+# Propiedades frontmatter
+title: 'Hello Markdown'
+date: '2023-07-21'
+description: 'Lorem ipsum dolor sit amet.'
+image: 'https://fastly.picsum.photos/id/1075/800/600.jpg?hmac=kYx8SJzDS2-aeDsguBGms2tWSUWkdtGPgCLNnanSNaM'
+tags: ['markdown']
+layout: '../../layouts/Posts.astro'
 ---
 
 ## Nuevo Lorem Ipsum

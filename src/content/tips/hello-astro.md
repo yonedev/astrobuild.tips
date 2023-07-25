@@ -1,10 +1,11 @@
 ---
-  title: "Hello Astro"
-  date: "2024-07-21"
-  description: "Proin porttitor, orci nec nonummy molestie."
-  image: "https://fastly.picsum.photos/id/1075/800/600.jpg?hmac=kYx8SJzDS2-aeDsguBGms2tWSUWkdtGPgCLNnanSNaM"
-  tags: ["astro", "javascript"]
-  layout: "../../layouts/Posts.astro"
+# Propiedades frontmatter
+title: 'Hello Astro'
+date: '2024-07-21'
+description: 'Proin porttitor, orci nec nonummy molestie.'
+image: 'https://fastly.picsum.photos/id/1075/800/600.jpg?hmac=kYx8SJzDS2-aeDsguBGms2tWSUWkdtGPgCLNnanSNaM'
+tags: ['astro', 'javascript']
+layout: '../../layouts/Posts.astro'
 ---
 
 ## Lorem Ipsum

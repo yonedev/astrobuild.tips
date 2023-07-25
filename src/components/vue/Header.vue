@@ -46,7 +46,7 @@
 			<div class="flex lg:hidden">
 				<button
 					type="button"
-					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
 					@click="mobileMenuOpen = true"
 				>
 					<span class="sr-only">Open main menu</span>
@@ -58,7 +58,7 @@
 					<PopoverButton
 						class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
 					>
-						Product
+						Pages
 						<ChevronDownIcon
 							class="h-5 w-5 flex-none text-gray-400 dark:text-slate-50"
 							aria-hidden="true"
@@ -119,14 +119,8 @@
 					</transition>
 				</Popover>
 
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
-					>Features</a
-				>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
-					>Marketplace</a
-				>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
-					>Company</a
+				<a href="/" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
+					>Home</a
 				>
 				<slot />
 			</PopoverGroup>
@@ -166,7 +160,7 @@
 								<DisclosureButton
 									class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 								>
-									Product
+									Pages
 									<ChevronDownIcon
 										:class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']"
 										aria-hidden="true"
@@ -184,19 +178,9 @@
 								</DisclosurePanel>
 							</Disclosure>
 							<a
-								href="#"
+								href="/"
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-slate-900"
-								>Features</a
-							>
-							<a
-								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Marketplace</a
-							>
-							<a
-								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Company</a
+								>Home</a
 							>
 						</div>
 						<div class="py-6">
@@ -239,33 +223,39 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/so
 
 const products = [
 	{
-		name: 'Analytics',
-		description: 'Get a better understanding of your traffic',
-		href: '#',
-		icon: ChartPieIcon
-	},
-	{
-		name: 'Engagement',
-		description: 'Speak directly to your customers',
-		href: '#',
-		icon: CursorArrowRaysIcon
-	},
-	{
-		name: 'Security',
-		description: 'Your customers’ data will be safe and secure',
-		href: '#',
+		name: 'Posts',
+		description: '',
+		href: '/posts',
 		icon: FingerPrintIcon
 	},
 	{
-		name: 'Integrations',
-		description: 'Connect with third-party tools',
-		href: '#',
+		name: 'About',
+		description: '',
+		href: '/about',
+		icon: ChartPieIcon
+	},
+	{
+		name: 'Contact',
+		description: '',
+		href: '/contact',
 		icon: SquaresPlusIcon
 	},
 	{
-		name: 'Automations',
-		description: 'Build strategic funnels that will convert',
-		href: '#',
+		name: '404 error',
+		description: '',
+		href: '/404',
+		icon: CursorArrowRaysIcon
+	},
+	{
+		name: '404 error [English]',
+		description: '',
+		href: '/en/404',
+		icon: CursorArrowRaysIcon
+	},
+	{
+		name: 'RSS',
+		description: '',
+		href: 'rss.xml',
 		icon: ArrowPathIcon
 	}
 ]

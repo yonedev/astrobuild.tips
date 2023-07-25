@@ -2,6 +2,7 @@
 interface Props {
 	title: string
 	description: string
+	lang?: string // Valor opcional
 }
 
 import BaseHead from '@components/BaseHead.astro'
@@ -9,20 +10,12 @@ import Header from '@components/vue/Header.vue'
 import ThemeSwitch from '@components/ThemeSwitch.astro'
 import Footer from '@components/vue/Footer.vue'
 import Social from '@components/svelte/Social.svelte'
-// TODO: @ para llegar a los componentes
-// TODO: sacar de todos lados los
-// TODO: Poner modo Dark
-// TODO: Botón modo dark mejorado
-// TODO: Traducir ui y contenido
 
-const { title, description } = Astro.props
+import { getLangFromUrl } from '../i18n/utils'
+const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 
-<style is:global>
-	/* Estilos globales si quisiera que fueran accesibles desde cualquier componente */
-</style>
-
-<html lang="es">
+<html lang={lang}>
 	<BaseHead title={title} description={description} />
 	<body class="h-screen bg-white dark:bg-gray-900">
 		<!-- Componente Astro Islands en Vue.js al que paso un componente astro -->

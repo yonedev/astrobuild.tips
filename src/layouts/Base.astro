@@ -11,10 +11,11 @@ import ThemeSwitch from '@components/ThemeSwitch.astro'
 import Footer from '@components/vue/Footer.vue'
 import Social from '@components/svelte/Social.svelte'
 
-import { getLangFromUrl } from '../i18n/utils'
+import { getLangFromUrl } from '@i18n/utils'
 const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 
+<!DOCTYPE html>
 <html lang={lang}>
 	<BaseHead title={title} description={description} />
 	<body class="h-screen bg-white dark:bg-gray-900">

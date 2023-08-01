@@ -36,3 +36,4 @@ Bienvenido/a a la Caja de herramientas para aprender Astro, un framework JavaScr
 - [Integraciones](https://astro.build/integrations/)
 - [HypeUi. Recursos y componentes TailwindCSS](https://www.hyperui.dev/)
 - [TailwindUI. Recursos y componentes TailwindCSS](https://tailwindui.com/)
+- [Rewind UI. Componentes TailwindCSS y React](https://rewind-ui.dev/)
